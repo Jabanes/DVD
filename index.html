@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="dvd" style="top: 300px; left: 20px; position: absolute;">DVD</button>
+    <script>
+        yPos = 10
+        xPos = 10
+        ydelta = 10
+        xdelta = 10
+        function move(){
+            yPos += ydelta
+            xPos += xdelta
+
+            console.log(`y = ${yPos}`);
+            console.log(`x = ${xPos}`);
+            dvd.style.top = `${yPos}px`
+            dvd.style.left = `${xPos}px`
+            if (yPos > window.innerHeight || yPos < window.innerHeight - window.innerHeight){
+                ydelta =- ydelta
+                
+            }
+            if (xPos > window.innerWidth || xPos < window.innerWidth - window.innerWidth) {
+                xdelta =- xdelta
+            }
+            
+        }
+        move()
+        setInterval(move, 10)
+
+
+
+
+    </script>
+</body>
+</html>
